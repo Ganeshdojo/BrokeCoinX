@@ -1,0 +1,145 @@
+.sidebar {
+  background: #000000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 14px;
+  border-right: 1px solid var(--color-border);
+  width: fit-content;
+  min-height: 100vh;
+  padding-top: 8rem;
+}
+
+.outer-box {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--color-yellow);
+  position: relative;
+  border-radius: 10px;
+}
+
+.inner-box {
+  width: 25px;
+  height: 25px;
+  background-color: var(--color-yellow);
+  border-radius: 7px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+  margin-top: 20px;
+}
+
+.icon {
+  cursor: pointer;
+  padding: 0.5rem 0.8rem;
+  stroke: hsl(219, 9%, 65%);
+}
+
+.icon:hover {
+  stroke: white;
+}
+
+.active-link {
+  background: hsla(46, 91%, 65%, 0.12);
+  border-radius: 8px;
+  position: relative;
+  stroke: var(--color-yellow);
+}
+
+.active-link .icon {
+  stroke: var(--color-yellow);
+}
+
+.active-link::before {
+  content: "";
+  width: 0.3rem;
+  height: 1.5rem;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  background: var(--color-yellow);
+  position: absolute;
+  left: -10%;
+  top: 50%;
+  transform: translate(-10%, -50%);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    min-height: auto;
+    height: 75px;
+    padding: 0.8rem 1.5rem;
+    padding-top: 0.5rem;
+    border-right: none;
+    border-top: 1px solid var(--color-border);
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+  }
+
+  .outer-box {
+    display: none; /* Hide logo on mobile */
+  }
+
+  .nav-items {
+    flex-direction: row;
+    gap: 2.5rem;
+    margin-top: 0;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .icon {
+    padding: 1rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+  }
+
+  .icon:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .active-link::before {
+    display: none; /* Hide the yellow line on mobile */
+  }
+
+  .active-link {
+    background: hsla(46, 91%, 65%, 0.2);
+    transform: scale(1.1);
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    height: 70px;
+    padding: 1rem 0.8rem;
+  }
+
+  .nav-items {
+    gap: 2rem;
+  }
+
+  .icon {
+    padding: 0.8rem;
+  }
+}

@@ -1,0 +1,119 @@
+.crypto-table {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: var(--color-nav-table-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid var(--color-border);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.table-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text-color-white);
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  align-items: flex-start;
+  padding: 2rem 2rem;
+  font-weight: 500;
+  padding-bottom: 1.5rem;
+  margin: 0.5rem 0;
+  gap: 1rem;
+  background: var(--color-tab-heading-bg);
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.table-header span {
+  color: var(--text-color-grey);
+  text-align: left;
+}
+
+.table-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0 0;
+  font-size: 0.9rem;
+  color: var(--text-color-grey);
+  border-top: 1px solid var(--color-border);
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.pagination {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.pagination button {
+  all: unset;
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: var(--text-color-grey);
+  cursor: pointer;
+  transition: 0.2s ease;
+  background: var(--color-nav-table-bg);
+}
+
+.pagination button:hover {
+  background: var(--color-yellow);
+  color: #000;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .crypto-table {
+    overflow-x: auto;
+    padding: 0.5rem;
+    width: 100%;
+  }
+
+  .table-header {
+    min-width: 800px; /* Ensure minimum width for horizontal scroll */
+    padding: 1rem 0.5rem;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    width: 100%;
+  }
+
+  .table-footer {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    width: 100%;
+  }
+
+  .pagination {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .crypto-table {
+    padding: 0.8rem;
+    width: 100%;
+  }
+
+  .table-header {
+    min-width: 700px;
+    padding: 1rem 0.5rem;
+    font-size: 0.7rem;
+    width: 100%;
+  }
+
+  .table-title {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+}

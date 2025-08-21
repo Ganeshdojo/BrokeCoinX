@@ -1,0 +1,64 @@
+/* CSS Variables */
+:root {
+  --color-yellow: hsl(46, 91%, 65%);
+  --color-yellow-dark: hsl(46, 76%, 59%);
+  --color-yellow-hover: hsl(46, 91%, 55%);
+  --color-nav-table-bg: hsl(240, 9%, 6%);
+  --color-tab-heading-bg: hsl(240, 9%, 7%);
+  --color-card-hover: hsl(240, 5%, 11%);
+  --color-border: hsl(40, 18%, 13%);
+
+  --color-red: hsl(3, 68%, 58%);
+  --color-green: hsl(150, 40%, 52%);
+
+  --text-color-white: hsl(0, 0%, 100%);
+  --text-color-grey: hsl(219, 9%, 65%);
+
+  --text-m: 1.75rem;
+  --text-sm: 1rem;
+  --text-lg: 4rem;
+
+  --color-gradient: linear-gradient(
+    135deg,
+    hsl(240, 16%, 6%) 0%,
+    hsl(240, 9%, 15%) 100%
+  );
+
+  /* Mobile breakpoints */
+  --mobile: 768px;
+  --mobile-small: 480px;
+}
+
+/* Reset */
+* {
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  scroll-behavior: smooth;
+  transition: "color 0.3s ease, background-color 0.3s ease";
+}
+
+body {
+  background: radial-gradient(
+    ellipse at top,
+    #0a0a0f 0%,
+    #050507 50%,
+    #000000 100%
+  );
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scroll on mobile */
+}
+
+/* Mobile-specific body adjustments */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 13px;
+  }
+}

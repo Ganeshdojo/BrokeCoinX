@@ -1,0 +1,155 @@
+.details-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1rem 2rem 2rem 2rem;
+
+  margin-top: 3rem;
+  border-radius: 10px;
+  background-color: #0f0f0f;
+}
+
+.details-container h3 {
+  font-size: var(--text-m);
+}
+.top-coins {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.coin-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex: 1;
+  font-size: 0.9rem;
+  padding: 2rem 2rem;
+  border-radius: 10px;
+  background: #141414;
+  transition: transform 0.2s ease;
+}
+
+.coin-wrapper:hover {
+  transform: scale(1.03);
+  border: 1.5px solid hsla(46, 91%, 65%, 1);
+}
+
+.details-container img {
+  width: 40px;
+  height: 40px;
+}
+
+.details-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 2rem 0;
+  gap: 1rem;
+}
+
+.header-subheading {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.header-content {
+  color: var(--text-color-grey);
+}
+
+.chart-container {
+  margin: auto;
+  height: 600px;
+  background-color: var(--color-nav-table-bg);
+  border-radius: 14px;
+  padding: 2rem;
+  border: 1px solid var(--color-border);
+}
+
+.chart-container span {
+  font-size: 1.2rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .details-container {
+    padding: 1rem 1rem 1rem 1rem;
+    margin-top: 2rem;
+  }
+
+  .top-coins {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .coin-wrapper {
+    padding: 1.5rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .details-container img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .details-header {
+    margin: 1.5rem 0;
+    gap: 0.8rem;
+  }
+
+  .header-subheading {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .header-content {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  .chart-container {
+    height: 400px;
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+
+  .chart-container span {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .details-container {
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .coin-wrapper {
+    padding: 1rem 0.5rem;
+    font-size: 0.7rem;
+  }
+
+  .details-container img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .header-subheading {
+    font-size: 1.5rem;
+  }
+
+  .header-content {
+    font-size: 0.8rem;
+  }
+
+  .chart-container {
+    height: 300px;
+    padding: 0.5rem;
+  }
+
+  .chart-container span {
+    font-size: 0.9rem;
+  }
+}

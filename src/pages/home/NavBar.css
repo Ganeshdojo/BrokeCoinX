@@ -1,0 +1,259 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 9rem;
+  background-color: var(--color-nav-table-bg);
+  padding: 0px 60px;
+  z-index: 99;
+  border-radius: 40px;
+  width: fit-content;
+  position: relative;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  /* background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); */
+}
+
+.nav-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
+  font-size: 0.8rem;
+}
+
+.active {
+  color: var(--color-yellow);
+}
+
+.live-coins {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.9rem;
+}
+
+.live {
+  color: var(--text-color-grey);
+}
+
+.nav-coin {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-change {
+  border-radius: 5px;
+  padding: 4px 5px;
+}
+
+.red {
+  color: var(--color-red);
+  background: hsla(5, 55%, 56%, 0.25);
+}
+
+.green {
+  color: var(--color-green);
+  background: hsla(150, 40%, 52%, 0.25);
+}
+
+.search-bar,
+.search-input {
+  all: unset;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  border: 1px solid var(--color-border, hsl(219, 9%, 20%));
+  border-radius: 30px;
+  background-color: var(--color-nav-table-bg);
+  width: 100%;
+  max-width: 400px;
+}
+
+.search-input {
+  flex: 1;
+  color: hsl(219, 9%, 85%);
+  background: transparent;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: hsl(219, 9%, 50%);
+}
+
+.search-icon {
+  transition: stroke 0.2s ease;
+  cursor: pointer;
+}
+
+.search-icon:hover {
+  stroke: var(--color-yellow);
+}
+
+/* Mobile Search Icon */
+.mobile-search-icon {
+  display: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.mobile-search-icon:hover {
+  background-color: hsla(219, 9%, 20%, 0.5);
+}
+
+/* Search Modal Styles */
+.search-modal-content {
+  width: 100%;
+  height: 50vh;
+  max-width: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.search-modal-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.search-modal-header h3 {
+  margin: 0;
+  color: var(--text-color-white);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.search-modal-input-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1rem;
+  border: 2px solid var(--color-border);
+  border-radius: 20px;
+  background-color: var(--color-nav-table-bg);
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.search-modal-input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--text-color-white);
+  font-size: 0.8rem;
+}
+
+.search-modal-input::placeholder {
+  color: var(--text-color-grey);
+}
+
+/* Mobile Responsiveness */
+
+@media (max-width: 1300px) {
+  .navbar {
+    gap: 1rem;
+    margin: 0.5rem;
+    justify-content: center;
+    top: 1.5rem;
+  }
+
+  .search-bar {
+    padding: 0.5rem 0.5rem;
+    width: 80%;
+    max-width: 300px;
+  }
+
+  .search-input {
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .nav-logo {
+    gap: 1rem;
+    font-size: 0.6rem;
+  }
+
+  .live-coins {
+    font-size: 0.7rem;
+  }
+}
+@media (max-width: 768px) {
+  .navbar {
+    gap: 2rem;
+    padding: 0px 0.5rem;
+    margin: 0.5rem;
+    width: 90%;
+    max-width: 600px;
+    flex-wrap: wrap;
+    justify-content: center;
+    top: 1rem;
+  }
+
+  .nav-logo {
+    gap: 1.5rem;
+    font-size: 0.7rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .live-coins {
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .desktop-search {
+    display: none;
+  }
+
+  .mobile-search-icon {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    /* padding: 0.5rem 1rem; */
+    margin: 1rem;
+    width: 95%;
+    gap: 1rem;
+    top: 0.5rem;
+  }
+
+  .nav-logo {
+    gap: 1rem;
+    font-size: 0.6rem;
+  }
+
+  .live-coins {
+    gap: 0.3rem;
+    font-size: 0.7rem;
+  }
+
+  .logo-name {
+    font-size: 1rem;
+  }
+}
