@@ -6,7 +6,7 @@ import CoinRow from "../../components/common/coinrow/CoinRow";
 import "./CryptoTable.css";
 
 const CryptoTable = ({ sortType }) => {
-  const { coins, search } = useContext(GlobalContext);
+  const { coins, search, isLoading, error } = useContext(GlobalContext);
 
   const [paginationDetails, setPaginationDetails] = useState({
     currentPage: 1,
@@ -81,6 +81,34 @@ const CryptoTable = ({ sortType }) => {
         currentPage: prev.currentPage - 1,
       }));
   };
+
+  if (isLoading) {
+    return (
+      <div className="crypto-table">
+        <h2 className="table-title">Top Cryptocurrencies</h2>
+        <CardWraper>
+          <div className="loading-state">
+            <div className="loading-spinner"></div>
+            <p>Loading cryptocurrency data...</p>
+          </div>
+        </CardWraper>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="crypto-table">
+        <h2 className="table-title">Top Cryptocurrencies</h2>
+        <CardWraper>
+          <div className="error-state">
+            <p>Error loading data: {error}</p>
+            <p>Using cached/mock data instead.</p>
+          </div>
+        </CardWraper>
+      </div>
+    );
+  }
 
   // const goToPage = (pageNum) => setCurrentPage(pageNum);
   return (

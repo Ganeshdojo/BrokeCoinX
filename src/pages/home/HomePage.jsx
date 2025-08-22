@@ -33,7 +33,7 @@ const HomePage = () => {
   if (!statsData?.data) {
     return (
       <p className="global-api-data">
-        Loading <span className="active"> API Data...</span>
+        Loading <span className="active">API Data...</span>
       </p>
     );
   }
